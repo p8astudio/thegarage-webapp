@@ -3,33 +3,24 @@ import { useState } from "react"
 import alquimista from './imagens/Alquimista.png'
 import logo from './imagens/TG_Logo_branca.png'
 import { useNavigate } from 'react-router-dom'
+import { postLoginUsuario } from "./api"
 
-export default function First(){
+export default function First({context}){
+    const {setUsuario}=context
     const navigate=useNavigate()
-    const [name, setname] = useState("")
-    const [password, setpassword] = useState("")
+    const [nome, setNome] = useState("")
+    const [senha, setSenha] = useState("")
     const [mantido,setMantido]=useState(false)
     function entrar(){
-        const formData={name,password}
-        /*
-        const promise=signIn(formData)
+        const promise=postLoginUsuario(nome,senha)
         promise.then(res=>{
-            
-            const {token,user}=res.data
-            setToken(token)
-            setUser(user)
-            localStorage.setItem("token", JSON.stringify(token))
-            localStorage.setItem("user", JSON.stringify(user))
-            */
-            navigate('/menu')/*
+            const user=res.data
+            setUsuario(user)
+            navigate('/menu')
         })
         promise.catch(e=>{
           console.log(e)
-          if(e.response && e.response.data){
-            return setError(e.response.data)
-          }
-          setError('Desculpe. Nosso servidor está fora do ar')
-        })*/
+        })
     }
     function manter(){
         setMantido(!mantido)
@@ -47,12 +38,12 @@ export default function First(){
 
             </Bloco>
             <h1><strong>Saudações,</strong> Viajante!</h1>
-            <input type="text" placeholder="Nome fantasia ou E-mail" value={name} onChange={e => setname(e.target.value)}  />
-            <input type="password" placeholder="senha viajante" value={password} onChange={e => setpassword(e.target.value)}  />
+            <input type="text" placeholder="Nome fantasia ou E-mail" value={nome} onChange={e => setNome(e.target.value)}  />
+            <input type="senha" placeholder="senha viajante" value={senha} onChange={e => setSenha(e.target.value)}  />
             <Manter>
                 <div>
                     <Quadradinho onClick={manter}>
-{mantido?<ion-icon name="checkmark"></ion-icon>:''}
+{mantido?<ion-icon nome="checkmark"></ion-icon>:''}
                     </Quadradinho>
                     <h2>Manter-me conectado</h2>
                 </div>

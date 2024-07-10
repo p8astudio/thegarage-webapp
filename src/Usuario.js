@@ -7,7 +7,7 @@ import queixada from './imagens/Queixada_Pepper.jpg'
 import tomato from './imagens/Tomato_Tomate.jpg'
 import styled from 'styled-components'
 import { getUsuarioInfos } from './api'
-export default function Usuario(){
+export default function Usuario({context}){
     const imagens=[banana,cabeca,dente,morango,queixada,tomato]
     const [escolhido,setEscolhido]=useState(1)
     const [nome,setNome]=useState('AlquimistaTG')
@@ -18,28 +18,30 @@ export default function Usuario(){
     const [saborDoce,setSaborDoce]=useState('Nutella com Morango')
     const [saborFavorito,setSaborFavorito]=useState('Bacon com Ovos')
     const [moedas,setMoedas]=useState(420)
-    function getUserInfos(){
-        const promise=getUsuarioInfos()
-        promise.then(res=>{
-          const {
-            name,title,chosen,level,points,
-            saltedFlavor,sweetFlavor,preferredFlavor,coins
-        }=res.data
-        setEscolhido(chosen)
+    function definirUsuario(){
+        const {usuario}=context
+        const {
+            nome:name,
+            email,
+            icone,
+            nivel:level,
+            pontos:points,
+            saborSalgado:ss,
+            saborDoce:sd,
+            preferido,
+            moedas:coins
+        }=usuario
+        setEscolhido(icone)
         setNome(name)
-        setTitulo(title)
+        setTitulo(name)
         setNivel(level)
         setPontos(points)
-        setSaborSalgada(saltedFlavor)
-        setSaborDoce(sweetFlavor)
-        setSaborFavorito(preferredFlavor)
+        setSaborSalgada(ss)
+        setSaborDoce(sd)
+        setSaborFavorito(preferido)
         setMoedas(coins)
-        })
-        promise.catch(e=>{
-          console.log(e)
-        })
     }
-    useEffect(getUserInfos,[])
+    useEffect(definirUsuario,[])
     return(
         <Tudo>
             <Perfil>

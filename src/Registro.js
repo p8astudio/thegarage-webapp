@@ -9,11 +9,12 @@ import queixada from './imagens/Queixada_Pepper.jpg'
 import tomato from './imagens/Tomato_Tomate.jpg'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
+import { postRegistroUsuario } from "./api"
 export default function Registro(){
     const navigate=useNavigate()
-    const [name, setname] = useState("")
+    const [nome, setNome] = useState("")
     const [email, setEmail] = useState("")
-    const [password, setpassword] = useState("")
+    const [senha, setSenha] = useState("")
     const [amost1,setAmost1]=useState(true)
     const [amost2,setAmost2]=useState(true)
     const [amost3,setAmost3]=useState(true)
@@ -22,7 +23,7 @@ export default function Registro(){
     const [amost6,setAmost6]=useState(false)
     const [aviso,setAviso]=useState(false)
     const [escolhido,setEscolhido]=useState(0)
-    const [senhosa,setSenhosa]=useState('password')
+    const [senhosa,setSenhosa]=useState('senha')
     function setaEsquerda(){
         if(amost3&&amost5){
             setAmost5(false)
@@ -52,9 +53,7 @@ export default function Registro(){
         }
     }
     function register(){
-        return navigate('/')
-        const formData={name,email,password}
-        const promise=axios.post(`http://localhost:5000/cadastro`,formData)
+        const promise=postRegistroUsuario(nome,email,senha,escolhido)
         promise.then(res=>{
           navigate('/')
         })
@@ -67,17 +66,17 @@ export default function Registro(){
     }
 
     function mostrarSenha(){
-        if(senhosa=='password'){
+        if(senhosa=='senha'){
             setSenhosa('text')
         }else{
-            setSenhosa('password')
+            setSenhosa('senha')
         }
     }
     
     return (
         <Tudo>
             <Tabua>
-            <Saida><ion-icon name="close"></ion-icon></Saida>
+            <Saida><ion-icon nome="close"></ion-icon></Saida>
             <Titulo>
             <h1>Registro do Viajante</h1>
             </Titulo>
@@ -85,7 +84,7 @@ export default function Registro(){
             <Acessar onClick={()=>navigate('/')}>
             <h2>Já é registrado? <strong><em>Acessar</em></strong></h2>
             </Acessar>
-            <input type="text" placeholder="Nome fantasia / Apelido" value={name} onChange={e => setname(e.target.value)}  />
+            <input type="text" placeholder="Nome fantasia / Apelido" value={nome} onChange={e => setNome(e.target.value)}  />
             <Caixa1>
             <Viz2 onClick={mostrarAviso}>
             <small>{'(?)'}</small>
@@ -103,7 +102,7 @@ export default function Registro(){
             <input type="email" placeholder="E-mail" value={email} onChange={e => setEmail(e.target.value)}  /> 
             </article>
             </Caixa1><Caixa1>
-            <input type={senhosa} placeholder="Senha viajante" value={password} onChange={e => setpassword(e.target.value)}  />
+            <input type={senhosa} placeholder="Senha viajante" value={senha} onChange={e => setSenha(e.target.value)}  />
             <Viz onClick={mostrarSenha}>
             <AiFillEye/>
             </Viz>
@@ -113,7 +112,7 @@ export default function Registro(){
             </Escolha>
             <Container>
                 <Setinha onClick={()=>{setaEsquerda()}}>
-                <ion-icon name="chevron-back-outline"></ion-icon>                </Setinha>
+                <ion-icon nome="chevron-back-outline"></ion-icon>                </Setinha>
                 <Icone onClick={()=>setEscolhido(1)} esco={escolhido==1} amostra={amost1} >
                     <img src={banana}/>
                 </Icone>
@@ -133,7 +132,7 @@ export default function Registro(){
                     <img src={tomato}/>
                 </Icone>
                 <Setinha onClick={()=>{setaDireita()}}>
-                <ion-icon name="chevron-forward-outline"></ion-icon>                </Setinha>
+                <ion-icon nome="chevron-forward-outline"></ion-icon>                </Setinha>
             </Container>
             <Possivel>
                 É possível conquistar novos ícones e alterá-lo depois
