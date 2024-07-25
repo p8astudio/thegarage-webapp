@@ -67,7 +67,7 @@ export default function First({context}){
     )
 }
 const Bloco=styled.div`
-position:relative;width:320px;height:280px;
+position:relative;width:290px;height:220px;
 
 article{
 img{height:80px;
@@ -78,7 +78,8 @@ img{height:80px;
 }
 }
 section{
-    img{height:350px;
+
+    img{height:300px;
     z-index:2;
     position:absolute;
     left:10px;
@@ -88,7 +89,7 @@ section{
 
 `
 const Esqueci = styled.button`
-color:white;font-size:14px;height:30px;
+color:white;font-size:14px;height:25px;
 margin:10px;border:0;background-color:#202020;
 `
 const Registrese = styled.button`
@@ -103,7 +104,7 @@ cursor:pointer;
 
 
 const Manter=styled.div`
-background-color:;width:80%;height:30px;margin:0 0 10px 0;
+background-color:;width:85%;height:30px;margin:0 0 10px 0;
 display:flex;justify-content:space-between;align-items:center;
 div{
     display:flex;align-items:center;
@@ -128,7 +129,7 @@ form{
     align-items:center;
 };
 input{
-    width:80%;height:50px;
+    width:85%;height:45px;
     border-radius:10px;
     background-color:transparent;
     margin-bottom:15px;font-size:17px;font-weight:500;
@@ -142,7 +143,7 @@ input::placeholder {
             color: #999;}
 h1{
     color:white;
-    font-size:22px;
+    font-size:20px;
     font-weight:500;
     strong{font-weight:700;}
 }
@@ -163,11 +164,11 @@ article{
 const Sombra=styled.div`
 box-shadow: -5px -5px 5px rgba(255, 255, 255, 0.1);
 border-radius:20px;background-color:red;
-width:80%;height:50px;display:flex;
+width:85%;height:40px;display:flex;
 justify-content:center;
 margin:10px;
 button{
-    width:100%;height:50px;background-color:white;
+    width:100%;height:40px;background-color:white;
     color:#202020;font-size:19px;
     border-radius:20px;
     ;border:0;cursor:pointer;
@@ -177,12 +178,12 @@ button{
 const Sombra2=styled.div`
 box-shadow: 5px -5px 5px rgba(255, 255, 255, 0.1);
 border-radius:20px;background-color:red;
-width:100%;height:50px;display:flex;
+width:100%;height:40px;display:flex;
 justify-content:center;
 `
 const Sombra3=styled.div`
 box-shadow: -5px 5px 5px rgba(255, 255, 255, 0.1);
 border-radius:20px;background-color:red;
-width:100%;height:50px;display:flex;
+width:100%;height:40px;display:flex;
 justify-content:center;
 `
