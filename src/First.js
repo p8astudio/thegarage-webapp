@@ -103,7 +103,7 @@ cursor:pointer;
 
 
 const Manter=styled.div`
-background-color:;width:80%;height:30px;margin:10px;
+background-color:;width:80%;height:30px;margin:0 0 10px 0;
 display:flex;justify-content:space-between;align-items:center;
 div{
     display:flex;align-items:center;
