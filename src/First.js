@@ -4,7 +4,7 @@ import alquimista from './imagens/Alquimista.png'
 import logo from './imagens/TG_Logo_branca.png'
 import { useNavigate } from 'react-router-dom'
 import { postLoginUsuario } from "./api"
-
+import tick from './imagens/tick.png'
 export default function First({context}){
     const {setUsuario}=context
     const navigate=useNavigate()
@@ -43,7 +43,7 @@ export default function First({context}){
             <Manter>
                 <div>
                     <Quadradinho onClick={manter}>
-{mantido?<ion-icon name="chevron-down-outline"></ion-icon>:''}
+{mantido?<img src={tick}/>:''}
                     </Quadradinho>
                     <h2>Manter-me conectado</h2>
                 </div>
@@ -114,6 +114,7 @@ width:28px;height:28px;background-color:#202020;
     border:2px solid white;border-radius:8px;margin-right:10px;
     display:flex;justify-content:center;align-tems:center;
     color:#e87c3a;font-size:25px;
+    img{width:70%;}
 `
 const Tudo = styled.div`
 display:flex;flex-direction:column;align-items:center;

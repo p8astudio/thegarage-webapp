@@ -189,7 +189,7 @@ const Acessar=styled.div`cursor:pointer;
 `
 
 const Icone=styled.div`
-display:${props=>props.amostra?'':'none'};
+
 img{height:70px;}
 padding:5px 5px 0 5px;
 border:${props=>props.esco?'2px solid #B16234;':''} 
@@ -204,7 +204,13 @@ cursor:pointer
 `
 
 const Container=styled.div`display:flex;align-items:center;justify-content:space-around;
-width:80%;height:80px
+width:80%;height:140px;
+overflow:hidden;
+overflow-x:scroll;
+::-webkit-scrollbar {height:7px}
+  ::-webkit-scrollbar-thumb {background: #232222; border-radius:5px;}
+  ::-webkit-scrollbar-thumb:hover {background: #191515;}
+
 `
 const Viz = styled.div`
 position:absolute;right:35px;font-size:30px;
