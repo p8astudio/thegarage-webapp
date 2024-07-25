@@ -112,8 +112,6 @@ export default function Registro(){
                 Escolha um <strong>ícone</strong> pra te representar:
             </Escolha>
             <Container>
-                <Setinha onClick={()=>{setaEsquerda()}}>
-                <ion-icon nome="chevron-back-outline"></ion-icon>                </Setinha>
                 <Icone onClick={()=>setEscolhido(1)} esco={escolhido==1} amostra={amost1} >
                     <img src={banana}/>
                 </Icone>
@@ -132,8 +130,6 @@ export default function Registro(){
                 <Icone onClick={()=>setEscolhido(6)} esco={escolhido==6} amostra={amost6} >
                     <img src={tomato}/>
                 </Icone>
-                <Setinha onClick={()=>{setaDireita()}}>
-                <ion-icon nome="chevron-forward-outline"></ion-icon>                </Setinha>
             </Container>
             <Possivel>
                 É possível conquistar novos ícones e alterá-lo depois
@@ -186,15 +182,17 @@ font-size:12px;padding:12px;box-sizing:border-box;
 position:absolute;width:215px;height:150px;background-color:white;
 `
 const Acessar=styled.div`cursor:pointer;
+color:#e87c3a
 `
 
 const Icone=styled.div`
 
-img{height:70px;}
-padding:5px 5px 0 5px;
+img{width:60px;}
+padding:3px 3px 3px 3px;margin-right:10px;
 border:${props=>props.esco?'2px solid #B16234;':''} 
 border-radius:5px;
 box-sizing:border-box;
+height:70px;
 cursor:pointer;
 `
 const Setinha=styled.button`
@@ -208,8 +206,8 @@ width:80%;height:140px;
 overflow:hidden;
 overflow-x:scroll;
 ::-webkit-scrollbar {height:7px}
-  ::-webkit-scrollbar-thumb {background: #232222; border-radius:5px;}
-  ::-webkit-scrollbar-thumb:hover {background: #191515;}
+  ::-webkit-scrollbar-thumb {background: #595959; border-radius:5px;}
+  ::-webkit-scrollbar-thumb:hover {background: #727070;}
 
 `
 const Viz = styled.div`
@@ -233,7 +231,7 @@ margin:10px;border:0;background-color:#2F2F2F;line-height:20px;
 const Escolha = styled.button`
 color:white;border:0;height:30px;
 strong{
-    color:#B16234;
+    color:#e87c3a;
 }
 background-color:#2F2F2F;
 font-size:17px;font-weight:500;
@@ -268,7 +266,7 @@ h1{
 }
 h2{
 color:white;font-weight:400;font-size:16px;
-strong{font-weight:700;color:#B16234;margin-left:10px;}
+strong{font-weight:700;color:#e87c3a;margin-left:10px;}
 }
 h3{
     color:#B16234;
