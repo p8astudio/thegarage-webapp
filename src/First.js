@@ -38,8 +38,8 @@ export default function First({context}){
 
             </Bloco>
             <h1><strong>Saudações,</strong> Viajante!</h1>
-            <input type="text" placeholder="Nome fantasia ou E-mail" value={nome} onChange={e => setNome(e.target.value)}  />
-            <input type="senha" placeholder="senha viajante" value={senha} onChange={e => setSenha(e.target.value)}  />
+            <input type="text" placeholder="Nome Fantasia ou E-mail" value={nome} onChange={e => setNome(e.target.value)}  />
+            <input type="senha" placeholder="Senha Viajante" value={senha} onChange={e => setSenha(e.target.value)}  />
             <Manter>
                 <div>
                     <Quadradinho onClick={manter}>
@@ -94,7 +94,7 @@ margin:10px;border:0;background-color:#202020;
 const Registrese = styled.button`
 color:white;border:0;
 strong{
-    color:#B16234;
+    color:#e87c3a;
 }
 background-color:#202020;
 font-size:18px;
@@ -118,7 +118,8 @@ width:28px;height:28px;background-color:#202020;
 const Tudo = styled.div`
 display:flex;flex-direction:column;align-items:center;
 justify-content:;
-width:100vw;height:100vh;background-color:#202020;
+width:100vw;
+max-width:500px;height:100vh;
 box-sizing:border-box;
 form{
     width:100%;
