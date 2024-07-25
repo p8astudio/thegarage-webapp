@@ -88,7 +88,7 @@ export default function Registro(){
             <input type="text" placeholder="Nome fantasia / Apelido" value={nome} onChange={e => setNome(e.target.value)}  />
             <Caixa1>
             <Viz2 onClick={mostrarAviso}>
-            <small>{'(?)'}</small>
+            (?)
             </Viz2>
             <article>
             <Aviso amostra={aviso}>
@@ -211,14 +211,14 @@ overflow-x:scroll;
 
 `
 const Viz = styled.div`
-position:absolute;right:35px;font-size:30px;
+position:absolute;right:28px;font-size:20px;
 top:10px;width:5px;height:5px;color:white;
-small{font-size:23px;}
+small{font-size:20px;}
 cursor:pointer
 `
 const Viz2 = styled.div`
-position:absolute;right:33px;font-size:30px;
-top:0px;width:5px;height:5px;color:white;
+position:absolute;right:28px;font-size:15px;
+top:12px;width:5px;height:5px;color:white;
 small{font-size:20px;}
 cursor:pointer
 `
@@ -246,7 +246,7 @@ width:100vw;height:100vh;background-color:#202020;
 box-sizing:border-box;
 
 input{
-    width:80%;min-height:45px;
+    width:85%;min-height:45px;
     border-radius:12px;
     background-color:transparent;
     margin:6px;font-size:17px;
@@ -274,8 +274,8 @@ h3{
 
 `
 const Caixa1 = styled.div`
-position:relative;width:80%;
-input{width:100%;margin:0}width:80%;
+position:relative;width:85%;
+input{width:100%;margin:0}width:85%;
 height:50px;margin:6px;
 `
 
