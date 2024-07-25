@@ -67,13 +67,13 @@ export default function First({context}){
     )
 }
 const Bloco=styled.div`
-position:relative;width:320px;height:280px;
+position:relative;;height:260px;whidth:100%;
 
 article{
 img{height:70px;
     position:absolute;
     bottom:0;
-    left:80px;
+    left:0px;
     z-index:1
 }
 }

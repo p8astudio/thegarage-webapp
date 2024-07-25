@@ -32,6 +32,7 @@ const context={usuario,setUsuario}
 }
 const Show=styled.div`
 height:100vh;width:100vw;background-color:#202020;
-
+display:flex;
+justify-content:center;
 `
 export default App;
