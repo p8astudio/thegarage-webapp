@@ -43,7 +43,7 @@ export default function First({context}){
             <Manter>
                 <div>
                     <Quadradinho onClick={manter}>
-{mantido?<ion-icon nome="checkmark"></ion-icon>:''}
+{mantido?<p>a</p>:''}
                     </Quadradinho>
                     <h2>Manter-me conectado</h2>
                 </div>
@@ -70,7 +70,7 @@ const Bloco=styled.div`
 position:relative;width:320px;height:280px;
 
 article{
-img{height:80px;
+img{height:70px;
     position:absolute;
     bottom:0;
     left:80px;
@@ -78,7 +78,7 @@ img{height:80px;
 }
 }
 section{
-    img{height:350px;
+    img{height:300px;
     z-index:2;
     position:absolute;
     left:10px;
@@ -113,7 +113,7 @@ const Quadradinho=styled.div`
 width:28px;height:28px;background-color:#202020;
     border:2px solid white;border-radius:8px;margin-right:10px;
     display:flex;justify-content:center;align-tems:center;
-    color:#B16234;font-size:25px;
+    color:blue;font-size:25px;
 `
 const Tudo = styled.div`
 display:flex;flex-direction:column;align-items:center;
@@ -149,7 +149,7 @@ h2{
 color:white;font-weight:400;font-size:16px;
 }
 h3{
-    color:#B16234;
+    color:#e87c3a;
 }
 section{
 
