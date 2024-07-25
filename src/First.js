@@ -92,12 +92,12 @@ color:white;font-size:14px;height:30px;
 margin:10px;border:0;background-color:#202020;
 `
 const Registrese = styled.button`
-color:white;border:0;height:30px;
+color:white;border:0;
 strong{
     color:#B16234;
 }
 background-color:#202020;
-font-size:19px;
+font-size:18px;
 cursor:pointer;
 `
 
@@ -135,10 +135,12 @@ input{
     padding-left:10px;
     box-sizing:border-box;
 }
-
+input::placeholder {
+            text-align: center;
+            color: #999;}
 h1{
     color:white;
-    font-size:23px;
+    font-size:22px;
     font-weight:500;
     strong{font-weight:700;}
 }
@@ -148,7 +150,12 @@ color:white;font-weight:400;font-size:16px;
 h3{
     color:#B16234;
 }
+section{
 
+}
+article{
+
+}
 `
 
 const Sombra=styled.div`

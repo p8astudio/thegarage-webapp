@@ -55,6 +55,7 @@ export default function Registro(){
     function register(){
         const promise=postRegistroUsuario(nome,email,senha,escolhido)
         promise.then(res=>{
+            console.log('foi')
           navigate('/')
         })
         promise.catch(e=>{
