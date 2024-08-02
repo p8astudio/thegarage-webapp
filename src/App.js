@@ -18,7 +18,7 @@ import queixada from './imagens/Queixada_Pepper.jpg'
 import tomato from './imagens/Tomato_Tomate.jpg'
 function App() {
   const [usuario,setUsuario]=useState(JSON.parse(localStorage.getItem('usuario'))||{})
-  const imagens=[banana,cabeca,dente,morango,queixada,tomato]
+  const imagens=[null,banana,cabeca,dente,morango,queixada,tomato]
 const context={usuario,setUsuario,imagens}
   return (
     <div className="App">
@@ -30,7 +30,7 @@ const context={usuario,setUsuario,imagens}
               <Route path="/" element={<First context={context} />} />
               <Route path="/registro" element={<Registro />} />
               <Route path="/menu" element={<Menu context={context} />} />
-              <Route path="/usuario" element={<Usuario context={context} />} />
+              <Route path="/perfil" element={<Usuario context={context} />} />
           </Routes>
           </Show>
         </Router>

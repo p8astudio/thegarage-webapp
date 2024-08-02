@@ -282,11 +282,11 @@ height:50px;margin:6px;
 const Sombra=styled.div`
 box-shadow: -5px -5px 5px rgba(255, 255, 255, 0.2);
 border-radius:20px;background-color:red;
-width:80%;height:50px;display:flex;
+width:80%;height:40px;display:flex;
 justify-content:center;
-margin:20px;
+margin:35px 0 0 0;
 button{
-    width:100%;height:50px;background-color:white;
+    width:100%;height:40px;background-color:white;
     color:#202020;font-size:19px;
     border-radius:20px;
     ;border:0;backdrop-filter: blur(10px);
@@ -296,12 +296,12 @@ button{
 const Sombra2=styled.div`
 box-shadow: 5px -5px 5px rgba(255, 255, 255, 0.2);
 border-radius:20px;background-color:red;
-width:100%;height:50px;display:flex;
+width:100%;height:40px;display:flex;
 justify-content:center;
 `
 const Sombra3=styled.div`
 box-shadow: -5px 5px 5px rgba(255, 255, 255, 0.2);
 border-radius:20px;background-color:red;
-width:100%;height:50px;display:flex;
+width:100%;height:40px;display:flex;
 justify-content:center;
 `

@@ -91,7 +91,7 @@ section{
 `
 const Esqueci = styled.button`
 color:white;font-size:14px;height:25px;
-margin:10px;border:0;background-color:#202020;
+margin:10px 0 20px 0;border:0;background-color:#202020;
 `
 const Registrese = styled.button`
 color:white;border:0;

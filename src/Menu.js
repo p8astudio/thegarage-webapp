@@ -27,7 +27,7 @@ export default function Menu({context}){
           <h4>Escolha seu portal</h4>
           <Principal>
             
-            <Escolha>
+            <Escolha onClick={()=>navigate('/perfil')}>
               <ion-icon name="fast-food-outline"></ion-icon>
               <h5>Perfil</h5>
               <h6><em>Fidelidade</em></h6>
@@ -66,10 +66,10 @@ export default function Menu({context}){
     )
 }
 const Rodape=styled.div`
-position:fixed;bottom:0;
+position:fixed;bottom:-10px;
 z-index:1
 `
-const Escolha=styled.div`
+const Escolha=styled.div`cursor:pointer;
 width:30%;height:90px;display:flex;flex-direction:column;
 justify-content:center;align-items:center;
 ion-icon{font-size:50px};margin:5px 0 20px 0;
@@ -78,7 +78,7 @@ h6{color:#BABABA;line-height:18px;font-weight:400;font-size:18px;margin:0px}
 `
 const Principal=styled.div`
 color:white;display:flex;width:100%;
-position:fixed;top:250px;height:220px;z-index:2;
+position:fixed;top:320px;height:220px;z-index:2;
 flex-wrap:wrap;justify-content:center;
 `
 const Container=styled.div`
@@ -88,8 +88,8 @@ color:white;
 h2{font-weight:300;font-size:28px;margin:0px 0 0 0}
 img{height:100px;
 border-radius:50%;
-margin-right:20px;
 }
+flex-direction:column;
 ion-icon{color:#F2784A;margin-right:10px;font-size:28px;}
 h1{
     font-size:18px;font-weight:200;
@@ -97,7 +97,7 @@ h1{
     margin:0px;
 }
 section{
-flex-direction:column;height:100px;justify-content:space-evenly;
+flex-direction:column;height:70px;justify-content:space-evenly;
     display:flex;align-items:center;
    
 }
