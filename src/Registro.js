@@ -77,14 +77,13 @@ export default function Registro(){
     return (
         <Tudo>
             <Tabua>
-            <Saida><ion-icon nome="close"></ion-icon></Saida>
+            <Saida onClick={()=>navigate('/')}>
+                a
+                </Saida>
             <Titulo>
             <h1>Registro do Viajante</h1>
             </Titulo>
             
-            <Acessar onClick={()=>navigate('/')}>
-            <h2>Já é registrado? <strong><em>Acessar</em></strong></h2>
-            </Acessar>
             <input type="text" placeholder="Nome fantasia / Apelido" value={nome} onChange={e => setNome(e.target.value)}  />
             <Caixa1>
             <Viz2 onClick={mostrarAviso}>
@@ -146,15 +145,16 @@ export default function Registro(){
     )
 }
 const Titulo=styled.div`
-height:50px;
+height:50px;margin:20px 0 15px 0;
 `
 const Saida=styled.div`
 height:50px;
 width:50px;
 display:flex;justify-content:center;
 align-items:center;
-color:#5B5B5B;ion-icon{font-size:38px;}
-position:absolute;right:0;
+color:white;
+ion-icon{font-size:38px;};
+position:absolute;right:0;top:0;
 box-sizing:border-box;
 `
 const Tabua=styled.div`position:relative;
@@ -202,7 +202,7 @@ cursor:pointer
 `
 
 const Container=styled.div`display:flex;align-items:center;justify-content:space-around;
-width:80%;height:140px;
+width:80%;height:100px;
 overflow:hidden;
 overflow-x:scroll;
 ::-webkit-scrollbar {height:7px}
@@ -229,7 +229,7 @@ height:30px;width:100%;margin:15px;
 margin:10px;border:0;background-color:#2F2F2F;line-height:20px;
 `
 const Escolha = styled.button`
-color:white;border:0;height:30px;
+color:white;border:0;height:10px;
 strong{
     color:#e87c3a;
 }
@@ -249,7 +249,7 @@ input{
     width:85%;min-height:45px;
     border-radius:12px;
     background-color:transparent;
-    margin:6px;font-size:17px;
+    margin:0px 0 6px 0;font-size:17px;
     font-weight:500;
     border:2.5px solid white;
     color:white;

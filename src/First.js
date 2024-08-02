@@ -15,6 +15,7 @@ export default function First({context}){
         const promise=postLoginUsuario(nome,senha)
         promise.then(res=>{
             const user=res.data
+            localStorage.setItem('usuario', JSON.stringify(user))
             setUsuario(user)
             navigate('/menu')
         })

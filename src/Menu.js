@@ -3,11 +3,11 @@ import { useState } from "react"
 import { useNavigate } from 'react-router-dom'
 import dente from './imagens/Dente_de_Alho.jpg'
 import rodape from './imagens/rodape.png'
-export default function Menu(){
+export default function Menu({context}){
+    const {usuario,imagens}=context
     const navigate=useNavigate()
-    const [moedas,setMoedas]=useState(420)
-    const [nome,setNome]=useState('AlquimistaTG')
     const [titulo,setTitulo]=useState('Viajante desconhecido')
+    const {moedas,nome,icone}=usuario
     return (
         <Tudo>
           <Topo>
@@ -16,15 +16,13 @@ export default function Menu(){
             <article><ion-icon name="power"></ion-icon></article>
           </Topo>
           <Container>
-          <img src={dente}></img>
+          <img src={imagens[icone]}></img>
+            <section>
             <h2>{nome}</h2>
             <h1><em>{titulo}</em></h1>
-            <Linha>
-            </Linha>
-            <section>
-                <ion-icon name="create"></ion-icon>
-                <h3>Editar perfil</h3>
             </section>
+          
+            
           </Container>
           <h4>Escolha seu portal</h4>
           <Principal>
@@ -60,35 +58,37 @@ export default function Menu(){
               <h6><em>The Garage</em></h6>
             </Escolha>
           </Principal>
+          <Rodape>
           <img src={rodape}></img>
+          </Rodape>
+          
         </Tudo>
     )
 }
+const Rodape=styled.div`
+position:fixed;bottom:0;
+z-index:1
+`
 const Escolha=styled.div`
-width:30%;height:200px;display:flex;flex-direction:column;
+width:30%;height:90px;display:flex;flex-direction:column;
 justify-content:center;align-items:center;
-ion-icon{font-size:50px;}
-h5{font-weight:400;margin:5px;font-size:17px;}
-h6{color:#BABABA;font-weight:400;font-size:18px;margin:5px;}
+ion-icon{font-size:50px};margin:5px 0 20px 0;
+h5{font-weight:400;margin:0px;font-size:17px;}
+h6{color:#BABABA;line-height:18px;font-weight:400;font-size:18px;margin:0px}
 `
 const Principal=styled.div`
 color:white;display:flex;width:100%;
+position:fixed;top:250px;height:220px;z-index:2;
 flex-wrap:wrap;justify-content:center;
 `
-const Linha=styled.div`
-background-color:#2A2A2A;
-height:2.5px;width:300px;
-margin:10px;
-
-`
 const Container=styled.div`
-display:flex;flex-direction:column;
+display:flex;
 align-items:center;
 color:white;
-h2{font-weight:300;font-size:28px;margin:15px 0 0 0}
-img{height:180px;
+h2{font-weight:300;font-size:28px;margin:0px 0 0 0}
+img{height:100px;
 border-radius:50%;
-
+margin-right:20px;
 }
 ion-icon{color:#F2784A;margin-right:10px;font-size:28px;}
 h1{
@@ -97,23 +97,25 @@ h1{
     margin:0px;
 }
 section{
+flex-direction:column;height:100px;justify-content:space-evenly;
     display:flex;align-items:center;
    
 }
+article{color:white;font-size:45px;}
 h3{font-weight:300;font-size:18px;}
 `
 const Topo=styled.div`
 display:flex;width:100%;justify-content:space-between;
-section{color:#AC3535;font-size:45px;}
-color:#F2784A;
+section{color:#AC3535;font-size:40px;background-color:transparent;}
+color:#F2784A;background-color:transparent;
 h1{
     font-size:20px;font-weight:400;
 }
-article{color:white;font-size:45px;}
-padding:15px;box-sizing:border-box;
+article{color:white;font-size:40px;background-color:transparent;}
+padding:15px 15px 0 15px;box-sizing:border-box;
 `
 const Tudo=styled.div`
-h4{font-size:40px;font-weight:600;margin:20px;color:white;}
+h4{font-size:27px;font-weight:600;margin-top:20px;color:white;}
 
 display:flex;flex-direction:column;align-items:center;
 width:100vw;height:100vh;background-color:#202020;

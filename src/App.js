@@ -10,9 +10,16 @@ import Menu from './Menu';
 import { useState } from 'react';
 import styled from 'styled-components';
 
+import banana from './imagens/Banana_Levada.jpg'
+import cabeca from './imagens/Cabeça_de_Cogumelo.jpg'
+import dente from './imagens/Dente_de_Alho.jpg'
+import morango from './imagens/Morango_Bundinha.jpg'
+import queixada from './imagens/Queixada_Pepper.jpg'
+import tomato from './imagens/Tomato_Tomate.jpg'
 function App() {
-  const [usuario,setUsuario]=useState({})
-const context={usuario,setUsuario}
+  const [usuario,setUsuario]=useState(JSON.parse(localStorage.getItem('usuario'))||{})
+  const imagens=[banana,cabeca,dente,morango,queixada,tomato]
+const context={usuario,setUsuario,imagens}
   return (
     <div className="App">
         <Router>
